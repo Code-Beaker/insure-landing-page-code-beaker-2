@@ -98,3 +98,52 @@ h4 {
     margin-top: 2rem;
   }
 }
+
+// SECTIONS
+.section {
+  padding: 12.5rem 7.5rem;
+
+  #{&}__heading {
+    font-size: var(--step-5);
+    position: relative;
+
+    &::before {
+      content: "";
+      width: 7.5rem;
+      height: 1px;
+      background-color: m.color(primary__dark-violet);
+      position: absolute;
+      top: -2rem;
+      left: 0;
+    }
+  }
+}
+
+.features {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  margin-top: 2rem;
+
+  #{&}__item {
+    padding: 1rem;
+  }
+
+  #{&}__item-img {
+    max-width: 5rem;
+    display: block;
+    margin-bottom: 3rem;
+  }
+
+  #{&}__item-heading {
+    margin-block: 1rem;
+    font-size: var(--step-1);
+    text-transform: capitalize;
+    color: m.color(neutral__very-dark-violet);
+  }
+
+  #{&}__item-text {
+    color: m.color(neutral__dark-grayish-violet);
+    font-size: var(--step--1);
+  }
+}
