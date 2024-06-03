@@ -15,7 +15,13 @@ h4 {
   display: flex;
   padding: 2rem;
   justify-content: space-between;
+  background-color: m.color(neutral__white);
   align-items: center;
+  // // position: fixed;
+  // top: 0;
+  // left: 0;
+  // width: 100%;
+  // z-index: 99;
 
   #{&}__links {
     display: flex;
@@ -46,10 +52,26 @@ h4 {
     grid-template-columns: repeat(2, 1fr);
     background-color: m.color(primary__dark-violet);
     gap: 2rem;
+    position: relative;
+  }
+
+  #{&}__pattern-left {
+    position: absolute;
+    max-width: 100%;
+    bottom: -50%;
+    left: 0;
+    z-index: 1;
+  }
+
+  #{&}__pattern-right {
+    position: absolute;
+    top: 7rem;
+    right: 0;
+    z-index: 0;
   }
 
   #{&}__cols-text-content {
-    padding: 10rem 5rem;
+    padding: 12.5rem calc(12.5rem / 2);
     color: m.color(neutral__white);
     position: relative;
   }
@@ -60,7 +82,7 @@ h4 {
 
   #{&}__image {
     position: absolute;
-    top: 5rem;
+    top: 7.5rem;
     right: 5rem;
     max-height: 100%;
   }
@@ -157,6 +179,7 @@ h4 {
   #{&}__wrapper {
     background-color: m.color(primary__dark-violet);
     position: relative;
+    z-index: 0;
 
     .how-we-work__bg {
       position: absolute;
@@ -164,6 +187,7 @@ h4 {
       top: 0;
       height: 100%;
       max-width: 100%;
+      z-index: -1;
     }
   }
 
@@ -222,6 +246,14 @@ h4 {
   #{&}__social-icons {
     display: flex;
     list-style: none;
-    gap: 1rem;
+    gap: 2rem;
+  }
+  #{&}__social-icon {
+    display: block;
+    outline-offset: 0.25rem;
+
+    &:focus {
+      outline: 0.125rem dotted m.color(neutral__dark-grayish-violet);
+    }
   }
 }
