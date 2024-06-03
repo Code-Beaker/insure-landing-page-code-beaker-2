@@ -1,0 +1,17 @@
+$fonts: (
+  "title": "DM Serif Display",
+  "text": "Karla",
+);
+
+@function font($font-name) {
+  @return map-get($fonts, $font-name);
+}
+
+$font-weights: (
+  "regular": 400,
+  "bold": 700,
+);
+
+@function weight($weight-name) {
+  @return map-get($font-weights, $weight-name);
+}

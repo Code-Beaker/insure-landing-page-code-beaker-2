@@ -1,0 +1,40 @@
+@use "./modules/" as m;
+
+body {
+  font-family: m.font(text);
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: m.font(title);
+}
+
+.navbar {
+  display: flex;
+  padding: 2rem;
+  justify-content: space-between;
+  align-items: center;
+
+  #{&}__links {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    list-style: none;
+  }
+
+  #{&}__link {
+    @include m.navlink(m.color(neutral__dark-grayish-violet), m.weight(bold));
+  }
+
+  .btn-border {
+    @include m.button_border(
+      m.color(neutral__white),
+      m.color(neutral__very-dark-violet),
+      m.color(neutral__very-dark-violet),
+      m.color(neutral__very-dark-violet),
+      m.weight(bold)
+    );
+  }
+}
