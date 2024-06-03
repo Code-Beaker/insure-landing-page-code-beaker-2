@@ -51,6 +51,7 @@ h4 {
   #{&}__cols-text-content {
     padding: 10rem 5rem;
     color: m.color(neutral__white);
+    position: relative;
   }
 
   #{&}__cols-image-content {
@@ -67,6 +68,18 @@ h4 {
   .hero__text-content__heading {
     font-size: var(--step-5);
     margin-bottom: 1rem;
+    line-height: 1;
+    position: relative;
+
+    &::before {
+      content: "";
+      width: 7.5rem;
+      height: 1px;
+      background-color: m.color(neutral__white);
+      position: absolute;
+      top: -4rem;
+      left: 0;
+    }
   }
 
   .hero__text-content-text {
