@@ -152,6 +152,7 @@ h4 {
 // HOW WE WORK
 .how-we-work {
   padding: 2rem 7.5rem;
+  margin-bottom: 7.5rem;
 
   #{&}__wrapper {
     background-color: m.color(primary__dark-violet);
@@ -192,5 +193,35 @@ h4 {
       );
       transition: 100ms ease;
     }
+  }
+}
+
+// FOOTER
+.footer {
+  padding: 3rem;
+  background-color: m.color(neutral__white);
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+
+  #{&}__bg {
+    position: absolute;
+    left: 0;
+    top: 0;
+    max-width: 100%;
+    height: auto;
+    z-index: -1;
+  }
+
+  #{&}__container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  #{&}__social-icons {
+    display: flex;
+    list-style: none;
+    gap: 1rem;
   }
 }
