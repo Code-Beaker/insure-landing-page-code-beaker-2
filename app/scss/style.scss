@@ -38,3 +38,50 @@ h4 {
     );
   }
 }
+
+// HERO
+.hero {
+  #{&}__cols {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    background-color: m.color(primary__dark-violet);
+    gap: 2rem;
+  }
+
+  #{&}__cols-text-content {
+    padding: 10rem 5rem;
+    color: m.color(neutral__white);
+  }
+
+  #{&}__cols-image-content {
+    position: relative;
+  }
+
+  #{&}__image {
+    position: absolute;
+    top: 5rem;
+    right: 5rem;
+    max-height: 100%;
+  }
+
+  .hero__text-content__heading {
+    font-size: var(--step-5);
+    margin-bottom: 1rem;
+  }
+
+  .hero__text-content-text {
+    font-size: var(--step--1);
+  }
+
+  .hero__btn {
+    @include m.button_border(
+      m.color(primary__dark-violet),
+      m.color(neutral__white),
+      m.color(neutral__white),
+      m.color(neutral__white),
+      m.weight(bold)
+    );
+    display: inline-block;
+    margin-top: 2rem;
+  }
+}
