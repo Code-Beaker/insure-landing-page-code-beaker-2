@@ -102,6 +102,7 @@ h4 {
 // SECTIONS
 .section {
   padding: 12.5rem 7.5rem;
+  padding-bottom: 3rem;
 
   #{&}__heading {
     font-size: var(--step-5);
@@ -145,5 +146,51 @@ h4 {
   #{&}__item-text {
     color: m.color(neutral__dark-grayish-violet);
     font-size: var(--step--1);
+  }
+}
+
+// HOW WE WORK
+.how-we-work {
+  padding: 2rem 7.5rem;
+
+  #{&}__wrapper {
+    background-color: m.color(primary__dark-violet);
+    position: relative;
+
+    .how-we-work__bg {
+      position: absolute;
+      right: 0;
+      top: 0;
+      height: 100%;
+      max-width: 100%;
+    }
+  }
+
+  .container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    padding: 2.5rem 5rem;
+  }
+
+  #{&}__heading {
+    font-size: var(--step-4);
+    line-height: 1;
+    color: m.color(neutral__white);
+  }
+  #{&}__button {
+    display: flex;
+    justify-content: end;
+    align-items: center;
+
+    .btn-border {
+      @include m.button_border(
+        m.color(primary__dark-violet),
+        m.color(neutral__white),
+        m.color(neutral__white),
+        m.color(neutral__white),
+        m.weight(bold)
+      );
+      transition: 100ms ease;
+    }
   }
 }
