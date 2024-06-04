@@ -17,17 +17,48 @@ h4 {
   justify-content: space-between;
   background-color: m.color(neutral__white);
   align-items: center;
-  // // position: fixed;
-  // top: 0;
-  // left: 0;
-  // width: 100%;
-  // z-index: 99;
+  position: relative;
 
   #{&}__links {
     display: flex;
     align-items: center;
     gap: 2rem;
     list-style: none;
+
+    @media screen and (width < 65rem) {
+      display: none;
+    }
+  }
+
+  .mobile-nav {
+    display: flex;
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    list-style: none;
+    width: 100%;
+    flex-direction: column;
+    display: none;
+
+    @media screen and (width < 50rem) {
+      & {
+        position: absolute;
+        display: flex;
+        top: 5rem;
+        left: 0;
+        background-color: m.color(neutral__white);
+        z-index: 99;
+        height: 0;
+        overflow: hidden;
+        padding: 0;
+        transition: 0.25s ease;
+      }
+    }
+  }
+
+  .mobile-nav__show {
+    padding: 1rem;
+    height: fit-content;
   }
 
   #{&}__link {
@@ -61,6 +92,13 @@ h4 {
     bottom: -50%;
     left: 0;
     z-index: 1;
+
+    @media screen and (width < 50rem) {
+      & {
+        bottom: 4rem;
+        z-index: -1;
+      }
+    }
   }
 
   #{&}__pattern-right {
@@ -74,6 +112,14 @@ h4 {
     padding: 12.5rem calc(12.5rem / 2);
     color: m.color(neutral__white);
     position: relative;
+
+    @media screen and (width < 50rem) {
+      & {
+        text-align: center;
+        padding: 3rem 1.5rem;
+        order: 1;
+      }
+    }
   }
 
   #{&}__cols-image-content {
@@ -84,7 +130,13 @@ h4 {
     position: absolute;
     top: 7.5rem;
     right: 5rem;
-    max-height: 100%;
+    object-fit: cover;
+    max-width: 100%;
+
+    @media screen and (width < 50rem) {
+      position: relative;
+      inset: 0;
+    }
   }
 
   .hero__text-content__heading {
@@ -92,6 +144,7 @@ h4 {
     margin-bottom: 1rem;
     line-height: 1;
     position: relative;
+    z-index: 2;
 
     &::before {
       content: "";
@@ -101,6 +154,10 @@ h4 {
       position: absolute;
       top: -4rem;
       left: 0;
+
+      @media screen and (width < 50rem) {
+        display: none;
+      }
     }
   }
 
@@ -126,9 +183,22 @@ h4 {
   padding: 12.5rem 7.5rem;
   padding-bottom: 3rem;
 
+  @media screen and (width < 50rem) {
+    & {
+      padding: 6rem 2rem;
+    }
+  }
+
   #{&}__heading {
     font-size: var(--step-5);
     position: relative;
+
+    @media screen and (width < 50rem) {
+      & {
+        font-size: var(--step-4);
+        text-align: center;
+      }
+    }
 
     &::before {
       content: "";
@@ -138,6 +208,14 @@ h4 {
       position: absolute;
       top: -2rem;
       left: 0;
+
+      @media screen and (width < 50rem) {
+        & {
+          width: 100%;
+          top: -1rem;
+          scale: 0.5 1;
+        }
+      }
     }
   }
 }
@@ -150,12 +228,20 @@ h4 {
 
   #{&}__item {
     padding: 1rem;
+
+    @media screen and (width < 50rem) {
+      text-align: center;
+    }
   }
 
   #{&}__item-img {
     max-width: 5rem;
     display: block;
     margin-bottom: 3rem;
+
+    @media screen and (width < 50rem) {
+      margin: auto;
+    }
   }
 
   #{&}__item-heading {
@@ -254,6 +340,76 @@ h4 {
 
     &:focus {
       outline: 0.125rem dotted m.color(neutral__dark-grayish-violet);
+    }
+  }
+}
+
+.navbar__toggle-btn {
+  display: none;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+
+  &:hover {
+    opacity: 0.85;
+  }
+
+  @media screen and (width< 50rem) {
+    display: block;
+  }
+}
+
+// MEDIA
+@media screen and (width < 50rem) {
+  .navbar {
+    flex-direction: column;
+    gap: 2rem;
+
+    #{&}__top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 100%;
+    }
+
+    #{&}__links {
+      display: none;
+      flex-direction: column;
+    }
+  }
+
+  .hero {
+    #{&}__cols {
+      grid-template-columns: 1fr;
+    }
+  }
+  #{&}__image {
+    position: relative;
+  }
+
+  .features {
+    grid-template-columns: 1fr;
+  }
+
+  .how-we-work {
+    padding: 1rem;
+
+    #{&}__heading {
+      font-size: var(--step-2);
+    }
+
+    .container {
+      grid-template-columns: 1fr;
+      gap: 2rem;
+      padding: 2rem 1rem;
+
+      .container__heading-wrapper {
+        text-align: center;
+      }
+    }
+
+    #{&}__button {
+      justify-content: center;
     }
   }
 }
