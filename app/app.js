@@ -1,19 +1,20 @@
+// Imports
+import "bootstrap-icons/font/bootstrap-icons.css";
 import "./scss/style.scss";
 import "./typeScale.css";
 
 const mobileNavlinks = document.querySelector(".mobile-nav");
 const navigationToggle = document.querySelector(".navbar__toggle-btn");
-const toggleIcon = document.querySelector(".toggle-icon");
-let hidden = true;
+const toggleIcon = document.querySelector("#toggleIcon");
 
 navigationToggle.addEventListener("click", () => {
-  if (hidden) {
-    mobileNavlinks.classList.add("mobile-nav__show");
-    toggleIcon.src = "assets/images/icon-close.svg";
-    hidden = false;
+  mobileNavlinks.classList.toggle("mobile-nav__show");
+
+  if (mobileNavlinks.classList.contains("mobile-nav__show")) {
+    toggleIcon.classList.add("bi-x");
+    toggleIcon.classList.remove("bi-list");
   } else {
-    mobileNavlinks.classList.remove("mobile-nav__show");
-    toggleIcon.src = "assets/images/icon-hamburger.svg";
-    hidden = true;
+    toggleIcon.classList.remove("bi-x");
+    toggleIcon.classList.add("bi-list");
   }
 });

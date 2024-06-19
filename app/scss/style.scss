@@ -15,9 +15,19 @@ h4 {
   display: flex;
   padding: 2rem;
   justify-content: space-between;
-  background-color: m.color(neutral__white);
   align-items: center;
+  background-color: m.color(neutral__white);
   position: relative;
+
+  #{&}__brand {
+    outline-offset: 0.125rem;
+    display: block;
+
+    &:focus,
+    &:focus-visible {
+      outline: 0.01rem dashed m.color(neutral__very-dark-violet);
+    }
+  }
 
   #{&}__links {
     display: flex;
@@ -31,7 +41,6 @@ h4 {
   }
 
   .mobile-nav {
-    display: flex;
     display: flex;
     align-items: center;
     gap: 2rem;
@@ -58,7 +67,7 @@ h4 {
 
   .mobile-nav__show {
     padding: 1rem;
-    height: fit-content;
+    height: 16rem;
   }
 
   #{&}__link {
@@ -348,10 +357,20 @@ h4 {
   display: none;
   background-color: transparent;
   border: none;
+  outline-offset: 0.125rem;
   cursor: pointer;
+
+  i {
+    font-size: 1.5rem;
+  }
 
   &:hover {
     opacity: 0.85;
+  }
+
+  &:focus,
+  &:focus-visible {
+    outline: 0.01rem dashed currentColor;
   }
 
   @media screen and (width< 50rem) {
