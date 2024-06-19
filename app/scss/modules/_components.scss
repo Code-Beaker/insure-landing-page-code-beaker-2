@@ -45,3 +45,29 @@
     outline: 0.125rem dotted currentColor;
   }
 }
+
+.skip-link {
+  text-align: center;
+  padding: 1rem;
+  border: 0.125rem solid black;
+  display: block;
+  font-size: var(--step-0);
+  font-weight: bold;
+  text-decoration: none;
+  color: black;
+  position: absolute;
+  inset: 0;
+  width: 20rem;
+  height: fit-content;
+  margin-inline: auto;
+  z-index: 99;
+  background-color: white;
+  transform: translateY(-100%);
+  transition: 100ms ease;
+
+  &:focus,
+  &:focus-visible {
+    transform: translateY(0);
+    text-decoration: underline 0.125rem;
+  }
+}
